@@ -1,2 +1,2 @@
 # Fungos
-Mobile app to identify European mushrooms 
+Mobile app to identify European mushrooms using AI.
