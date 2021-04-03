@@ -1,6 +1,6 @@
 # TODO
-#  add testing multiple images
-#  add confusion matrix
+#   add testing multiple images
+#   add confusion matrix
 
 import tensorflow as tf
 import functions as fc

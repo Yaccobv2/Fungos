@@ -65,7 +65,7 @@ def createNeuralNetwork(input_shape, number_of_classes):
     model.add(tf.keras.layers.Dense(number_of_classes, activation='softmax'))
 
     model.compile(tf.keras.optimizers.Adam(lr=0.001), loss='categorical_crossentropy', metrics='accuracy')
-
+    print(model.summary())
     return model
 
 def loadForPrediction(dir, width, height):

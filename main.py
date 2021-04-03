@@ -1,19 +1,23 @@
 # TODO:
-#  add graphs acc(epoch), loss(epoch)
+#   add graphs acc(epoch), loss(epoch)
+#   add checkpoints
 
 import functions
 import numpy as np
 import tensorflow as tf
 import itertools
+import math
+import matplotlib.pyplot
 
 #dir = "E:/GitHub/fungos_libs/Mushrooms"
 dir = "C:/Users/Mateusz/Documents/GitHub/fungos_dataset/Mushrooms"
 
 #######################################
 batch_size = 50
-epochs = 80
+epochs = 30
 img_size = (50, 50, 3)
 imgs_per_class = 400
+steps_per_epoch = 200
 #######################################
 
 images, labels, classes = functions.readData(dir,imgs_per_class)
@@ -61,20 +65,32 @@ print(len(train_data))
 print(len(train_label))
 print("########")
 
+# steps_per_epoch = len(train_data)/batch_size
+print("len(train_data)/batch_size: ", len(train_data)/batch_size)
+
+# repeat
+repeats = []
+reps = math.ceil(steps_per_epoch/(len(train_data)/batch_size))
+print("Reps: ", reps)
+
+for x in train_data:
+    repeats.append(reps)
+
+train_data = tf.repeat(np.array(train_data), repeats=repeats, axis=0)
+train_label = tf.repeat(np.array(train_label), repeats=repeats, axis=0)
 
 # train model
-x = model.fit(dataGen.flow(np.array(train_data), np.array(train_label), batch_size=batch_size), epochs=epochs, steps_per_epoch=len(train_data)/batch_size,
+x = model.fit(dataGen.flow(np.array(train_data), np.array(train_label), batch_size=batch_size), epochs=epochs, steps_per_epoch=steps_per_epoch,
               validation_data=(np.array(validation_data), np.array(validation_label)), shuffle=True)
 
 # check accuracy on test data
 y = model.evaluate(np.array(test_data), np.array(test_label))
-
 
 # print results
 print("Funkcja bledu: ", y[0])
 print("Skutecznosc: ", y[1])
 
 # save model
-name = 'model_1_'+str(img_size[0])+'x'+str(img_size[1])+'_batch'+str(batch_size)+'_epochs'+str(epochs)+'_imgs'+str(imgs_per_class)+'_acc'+str(round(y[1], 2))+'.h5'
+name = 'model_1_'+str(img_size[0])+'x'+str(img_size[1])+'_batch'+str(batch_size)+'_epochs'+str(epochs)+'_imgs'+str(imgs_per_class)+'_steps'+str(steps_per_epoch)+'_acc'+str(round(y[1], 2))+'.h5'
 print(name)
 model.save(name)
