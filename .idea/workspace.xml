@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdcf0a45-3dec-449b-84f5-f672ab15d209" name="Default Changelist" comment="Test commit">
-      <change beforePath="$PROJECT_DIR$/.idea/Fungos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fungos.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_neural_network.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,10 +49,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fungos_libs/Scripts" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.test_neural_network">
     <configuration name="Fungos" type="PythonConfigurationType" factoryName="Python">
       <module name="Fungos" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -59,9 +60,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="E:\GitHub\fungos_libs\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
@@ -73,6 +74,54 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Fungos" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_neural_network" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Fungos" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_neural_network.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_neural_network" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -110,35 +159,45 @@
     <option name="LAST_COMMIT_MESSAGE" value="Test commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="63" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617194826866">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2129" y="65" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617386270524">
+      <screen x="1920" y="0" width="1440" height="860" />
     </state>
     <state x="223" y="63" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1617194826866" />
+    <state x="2129" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1617386270524" />
     <state x="279" y="85" width="1362" height="955" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616844417111" />
-    <state x="548" y="191" key="FileChooserDialogImpl" timestamp="1617194066646">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2434" y="199" key="FileChooserDialogImpl" timestamp="1617385725418">
+      <screen x="1920" y="0" width="1440" height="860" />
     </state>
     <state x="548" y="191" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1617194066646" />
+    <state x="2434" y="199" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1617385725418" />
     <state x="685" y="241" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616844482001" />
-    <state width="1515" height="666" key="GridCell.Tab.0.bottom" timestamp="1617200950371">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1899" height="287" key="GridCell.Tab.0.bottom" timestamp="1617461281226">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617200950371" />
+    <state width="1899" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1617461281226" />
+    <state width="1419" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1617388635400" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616855302931" />
-    <state width="1515" height="666" key="GridCell.Tab.0.center" timestamp="1617200950371">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1899" height="287" key="GridCell.Tab.0.center" timestamp="1617461281226">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617200950371" />
+    <state width="1899" height="287" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1617461281226" />
+    <state width="1419" height="227" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1617388635400" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616855302931" />
-    <state width="1515" height="666" key="GridCell.Tab.0.left" timestamp="1617200950371">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1899" height="287" key="GridCell.Tab.0.left" timestamp="1617461281226">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617200950371" />
+    <state width="1899" height="287" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1617461281226" />
+    <state width="1419" height="227" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1617388635400" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616855302931" />
-    <state width="1515" height="666" key="GridCell.Tab.0.right" timestamp="1617200950371">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1899" height="287" key="GridCell.Tab.0.right" timestamp="1617461281226">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617200950371" />
+    <state width="1899" height="287" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@0.0.1920.1040" timestamp="1617461281226" />
+    <state width="1419" height="227" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1617388635400" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616855302931" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1617194236717">
       <screen x="0" y="0" width="1536" height="824" />
@@ -160,10 +219,11 @@
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617194236717" />
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616854510092" />
-    <state x="346" y="72" key="SettingsEditor" timestamp="1616845228468">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2180" y="60" key="SettingsEditor" timestamp="1617386253368">
+      <screen x="1920" y="0" width="1440" height="860" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616843661445" />
+    <state x="2180" y="60" key="SettingsEditor/0.0.1920.1040/1920.0.1440.860@1920.0.1440.860" timestamp="1617386253368" />
     <state x="346" y="72" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616845228468" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1616845452211">
       <screen x="0" y="0" width="1920" height="1040" />

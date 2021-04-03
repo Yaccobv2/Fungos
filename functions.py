@@ -6,10 +6,10 @@ import sklearn.model_selection
 import tensorflow as tf
 
 
-def resize(img):
-    img = cv2.resize(img, (50, 50))
+def resize(img, size):
+    img = cv2.resize(img, (size[0], size[1]))
     # plt.imshow(img)
-    return img
+    return img.astype(np.float32)/255
 
 
 def readData(dir,number_of_images):
@@ -20,7 +20,7 @@ def readData(dir,number_of_images):
     for folder in os.listdir(dir):
         counter = 0
         for imgs in os.listdir(dir + "/" + folder):
-            img = cv2.imread(dir + "/" + folder + "/" + imgs, )
+            img = cv2.imread(dir + "/" + folder + "/" + imgs)
 
             images.append(img)
             labels.append(str(folder))
@@ -67,3 +67,10 @@ def createNeuralNetwork(input_shape, number_of_classes):
     model.compile(tf.keras.optimizers.Adam(lr=0.001), loss='categorical_crossentropy', metrics='accuracy')
 
     return model
+
+def loadForPrediction(dir, width, height):
+    img = tf.keras.preprocessing.image.load_img(dir, target_size=(width, height))
+    img = tf.keras.preprocessing.image.img_to_array(img)
+    img = np.expand_dims(img, axis=0)
+
+    return img.astype(np.float32)/255
