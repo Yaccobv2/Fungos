@@ -74,3 +74,4 @@ def loadForPrediction(dir, width, height):
     img = np.expand_dims(img, axis=0)
 
     return img.astype(np.float32)/255
+    
