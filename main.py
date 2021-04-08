@@ -12,19 +12,19 @@ import matplotlib.pyplot as plt
 import models
 import test_neural_network
 
-#dir = "E:/GitHub/fungos_libs/Mushrooms"
-#dir = "C:/Users/Mateusz/Documents/GitHub/fungos_dataset/Mushrooms"
-dir = "Mushrooms_labeled"
+# dir = "E:/GitHub/fungos_libs/Mushrooms_labeled"
+# dir = "C:/Users/Mateusz/Documents/GitHub/fungos_dataset/Mushrooms"
+dir = "muschrooms2"
 
 #######################################
-batch_size = 50
-epochs = 3
-img_size = (50, 50, 3)
-imgs_per_class = 400
-steps_per_epoch = 100
+batch_size = 64
+epochs = 100
+img_size = (80, 80, 3)
+imgs_per_class = 600
+steps_per_epoch = 200
 #######################################
 
-images, labels, classes = functions.readData(dir,imgs_per_class)
+images, labels, classes = functions.readData(dir, imgs_per_class)
 
 print("Number of classes: ", len(classes))
 print("Number of images: ", len(images))
@@ -54,16 +54,18 @@ validation_label = functions.oneHotEncoding(validation_label, len(classes))
 
 # data augmentation
 dataGen = tf.keras.preprocessing.image.ImageDataGenerator(width_shift_range=0.2,
-                             height_shift_range=0.2,
-                             zoom_range=0.1,
-                             shear_range=0.2,
-                             rotation_range=20)
+                                                          height_shift_range=0.2,
+                                                          zoom_range=0.2,
+                                                          shear_range=0.2,
+                                                          rotation_range=30)
 dataGen.fit(train_data)
 
 # create neural network
-#model = functions.createNeuralNetwork((img_size[1], img_size[0], img_size[2]), len(classes))
-model = models.model_2((img_size[1], img_size[0], img_size[2]), len(classes))
+# model = functions.createNeuralNetwork((img_size[1], img_size[0], img_size[2]), len(classes))
+model = models.model_4((img_size[1], img_size[0], img_size[2]), len(classes))
 
+
+print(model.summary())
 # print(model.summary())
 print("########")
 print(len(train_data))
@@ -71,11 +73,11 @@ print(len(train_label))
 print("########")
 
 # steps_per_epoch = len(train_data)/batch_size
-print("len(train_data)/batch_size: ", len(train_data)/batch_size)
+print("len(train_data)/batch_size: ", len(train_data) / batch_size)
 
 # repeat
 repeats = []
-reps = math.ceil(steps_per_epoch/(len(train_data)/batch_size))
+reps = math.ceil(steps_per_epoch / (len(train_data) / batch_size))
 print("Reps: ", reps)
 
 for x in train_data:
@@ -85,7 +87,8 @@ train_data = tf.repeat(np.array(train_data), repeats=repeats, axis=0)
 train_label = tf.repeat(np.array(train_label), repeats=repeats, axis=0)
 
 # train model
-x = model.fit(dataGen.flow(np.array(train_data), np.array(train_label), batch_size=batch_size), epochs=epochs, steps_per_epoch=steps_per_epoch,
+x = model.fit(dataGen.flow(np.array(train_data), np.array(train_label), batch_size=batch_size), epochs=epochs,
+              steps_per_epoch=steps_per_epoch,
               validation_data=(np.array(validation_data), np.array(validation_label)), shuffle=True)
 
 # check accuracy on test data
@@ -98,20 +101,25 @@ print("Skutecznosc: ", y[1])
 test_neural_network.test(model, test_data, test_label)
 
 # save model
-name = 'model_1_'+str(img_size[0])+'x'+str(img_size[1])+'_batch'+str(batch_size)+'_epochs'+str(epochs)+'_imgs'+str(imgs_per_class)+'_steps'+str(steps_per_epoch)+'_acc'+str(round(y[1], 2))+'.h5'
+name = 'model_1_' + str(img_size[0]) + 'x' + str(img_size[1]) + '_batch' + str(batch_size) + '_epochs' + str(
+    epochs) + '_imgs' + str(imgs_per_class) + '_steps' + str(steps_per_epoch) + '_acc' + str(round(y[1], 2)) + '.h5'
 print(name)
 model.save(name)
 
-plt.figure(1)
-plt.plot(x.history['loss'])
-plt.plot(x.history['val_loss'])
-plt.legend(['training','validation'])
-plt.title('Loss')
-plt.xlabel('epoch')
-plt.figure(2)
-plt.plot(x.history['accuracy'])
-plt.plot(x.history['val_accuracy'])
-plt.legend(['training','validation'])
-plt.title('Accuracy')
-plt.xlabel('epoch')
-plt.show()
+test_neural_network.test(model, test_data, test_label)
+test_neural_network.test(model, train_data, train_label)
+test_neural_network.test(model, validation_data, validation_label)
+
+# plt.figure(1)
+# plt.plot(x.history['loss'])
+# plt.plot(x.history['val_loss'])
+# plt.legend(['training', 'validation'])
+# plt.title('Loss')
+# plt.xlabel('epoch')
+# plt.figure(2)
+# plt.plot(x.history['accuracy'])
+# plt.plot(x.history['val_accuracy'])
+# plt.legend(['training', 'validation'])
+# plt.title('Accuracy')
+# plt.xlabel('epoch')
+# plt.show()
