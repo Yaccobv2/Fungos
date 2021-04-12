@@ -39,7 +39,7 @@ def createNpArray(input_array):
 
 
 def splitDataIntoContainers(data, labels, size):
-    data1, data2, label1, label2 = sklearn.model_selection.train_test_split(data, labels, test_size=size)
+    data1, data2, label1, label2 = sklearn.model_selection.train_test_split(data, labels, test_size=size,random_state=42)
     return data1, data2, label1, label2
 
 
