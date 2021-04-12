@@ -14,12 +14,12 @@ import test_neural_network
 
 # dir = "E:/GitHub/fungos_libs/Mushrooms_labeled"
 # dir = "C:/Users/Mateusz/Documents/GitHub/fungos_dataset/Mushrooms"
-dir = "muschrooms2"
+dir = "mushrooms2"
 
 #######################################
 batch_size = 64
 epochs = 100
-img_size = (80, 80, 3)
+img_size = (124, 124, 3)
 imgs_per_class = 600
 steps_per_epoch = 200
 #######################################
@@ -39,9 +39,8 @@ print(images[0].shape)
 images = list(map(functions.resize, images, itertools.repeat((img_size[0], img_size[1]), len(images))))
 print(images[0].shape)
 
-train_data, test_data, train_label, test_label = functions.splitDataIntoContainers(images, labels, 0.2)
-train_data, validation_data, train_label, validation_label = functions.splitDataIntoContainers(train_data, train_label,
-                                                                                               0.1)
+train_data, test_data, train_label, test_label = functions.splitDataIntoContainers(images, labels,0.1)
+train_data, validation_data, train_label, validation_label = functions.splitDataIntoContainers(train_data, train_label,0.2)
 
 print("Number of training images: ", len(train_data))
 print("Number of testing images: ", len(test_data))
@@ -53,11 +52,11 @@ test_label = functions.oneHotEncoding(test_label, len(classes))
 validation_label = functions.oneHotEncoding(validation_label, len(classes))
 
 # data augmentation
-dataGen = tf.keras.preprocessing.image.ImageDataGenerator(width_shift_range=0.2,
-                                                          height_shift_range=0.2,
-                                                          zoom_range=0.2,
-                                                          shear_range=0.2,
-                                                          rotation_range=30)
+dataGen = tf.keras.preprocessing.image.ImageDataGenerator(width_shift_range=0.4,
+                                                          height_shift_range=0.4,
+                                                          zoom_range=0.1,
+                                                          shear_range=0.4,
+                                                          rotation_range=60)
 dataGen.fit(train_data)
 
 # create neural network

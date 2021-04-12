@@ -98,24 +98,35 @@ def model_3(input_shape, number_of_classes):
 def model_4(input_shape, number_of_classes):
     model = tf.keras.Sequential()
 
-    model.add(tf.keras.layers.Input(shape=input_shape))
+    model.add(tf.keras.layers.Conv2D(64, 7,strides=1, activation='relu',kernel_initializer='he_normal', padding='same',input_shape=input_shape))
+    model.add(tf.keras.layers.AveragePooling2D(2))
+    model.add(tf.keras.layers.Dropout(0.5))
+    model.add(tf.keras.layers.GaussianNoise(0.1))
 
-    model.add(tf.keras.layers.Conv2D(64, 7, activation='relu', padding='same',kernel_regularizer=tf.keras.regularizers.l2(0.01),
-                                     bias_regularizer=tf.keras.regularizers.l2(0.01)))
-    model.add(tf.keras.layers.MaxPooling2D(2))
     model.add(tf.keras.layers.Conv2D(128, 3, activation='relu', padding='same'))
     model.add(tf.keras.layers.Conv2D(128, 3, activation='relu', padding='same'))
-    model.add(tf.keras.layers.MaxPooling2D(2))
+    model.add(tf.keras.layers.AveragePooling2D(2))
+    model.add(tf.keras.layers.Dropout(0.5))
+    model.add(tf.keras.layers.GaussianNoise(0.1))
+
     model.add(tf.keras.layers.Conv2D(256, 3, activation='relu', padding='same',kernel_regularizer=tf.keras.regularizers.l2(0.01),
                                      bias_regularizer=tf.keras.regularizers.l2(0.01)))
     model.add(tf.keras.layers.Conv2D(256, 3, activation='relu', padding='same',kernel_regularizer=tf.keras.regularizers.l2(0.01),
-                                     bias_regularizer=tf.keras.regularizers.l2(0.01)))                               
-    model.add(tf.keras.layers.MaxPooling2D(2))
+                                     bias_regularizer=tf.keras.regularizers.l2(0.01)))  
+    model.add(tf.keras.layers.AveragePooling2D(2))
+    model.add(tf.keras.layers.Dropout(0.5))
+    model.add(tf.keras.layers.GaussianNoise(0.1))
+    
     model.add(tf.keras.layers.Flatten())
+
     model.add(tf.keras.layers.Dense(128, activation='relu'))
-    model.add(tf.keras.layers.Dropout(0.6))
-    model.add(tf.keras.layers.Dense(64, activation='relu'))
-    model.add(tf.keras.layers.Dropout(0.6))
+    model.add(tf.keras.layers.Dropout(0.5))
+    model.add(tf.keras.layers.GaussianNoise(0.1))
+
+    model.add(tf.keras.layers.Dense(128, activation='relu'))
+    model.add(tf.keras.layers.Dropout(0.2))
+
+
     model.add(tf.keras.layers.Dense(number_of_classes, activation='softmax'))
 
     model.compile(tf.keras.optimizers.Adam(lr=0.001), loss='categorical_crossentropy', metrics='accuracy')
@@ -164,6 +175,32 @@ def model_5(input_shape, number_of_classes):
     model.add(tf.keras.layers.Dense(number_of_classes, activation="softmax"))
     
     model.compile(tf.keras.optimizers.Adam(lr=0.001), loss='categorical_crossentropy', metrics='accuracy')
+    return model
+
+def model_7(input_shape, number_of_classes):
+    model = tf.keras.Sequential()
+
+    model.add(tf.keras.layers.Conv2D(64, 7,strides=1, activation='relu',kernel_initializer='he_normal', padding='same',input_shape=input_shape))
+    model.add(tf.keras.layers.MaxPooling2D(2))
+    model.add(tf.keras.layers.Dropout(0.4))
+    model.add(tf.keras.layers.Conv2D(128, 3, activation='relu', padding='same'))
+    model.add(tf.keras.layers.Conv2D(128, 3, activation='relu', padding='same'))
+    model.add(tf.keras.layers.MaxPooling2D(2))
+    model.add(tf.keras.layers.Conv2D(256, 3, activation='relu', padding='same',kernel_regularizer=tf.keras.regularizers.l2(0.01),
+                                     bias_regularizer=tf.keras.regularizers.l2(0.01)))
+    model.add(tf.keras.layers.Conv2D(256, 3, activation='relu', padding='same',kernel_regularizer=tf.keras.regularizers.l2(0.01),
+                                     bias_regularizer=tf.keras.regularizers.l2(0.01)))  
+    model.add(tf.keras.layers.MaxPooling2D(2))
+    model.add(tf.keras.layers.Dropout(0.4))
+    model.add(tf.keras.layers.Flatten())
+    model.add(tf.keras.layers.Dense(128, activation='relu'))
+    model.add(tf.keras.layers.Dropout(0.4))
+    model.add(tf.keras.layers.Dense(64, activation='relu'))
+    model.add(tf.keras.layers.Dropout(0.2))
+    model.add(tf.keras.layers.Dense(number_of_classes, activation='softmax'))
+
+    model.compile(tf.keras.optimizers.Adam(lr=0.001), loss='categorical_crossentropy', metrics='accuracy')
+    print(model.summary())
     return model
 
 # model_1((200, 200, 3), 9)
