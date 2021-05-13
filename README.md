@@ -2,7 +2,7 @@
 Mobile app to identify European mushrooms using ML.
 
 # Purpose of the project
-The project is intended to classify mushrooms using their photos.  Aconvolutional neural network is used for this purpose.  Mushrooms areclassified into particular classes / species:
+The project is intended to classify mushrooms using their photos, convolutional neural network is used for this purpose.  Mushrooms are classified into particular classes / species:
 
 * Amanita bisporigera
 * Amanita muscaria
@@ -18,7 +18,7 @@ The project is intended to classify mushrooms using their photos.  Aconvolutiona
 * Google Collaboratory - a platform that allows you to perform cloudcomputing using a shared GPU
 
 # Image database
-In this project we used open-source database https://www.kaggle.com/harperd17/mushroom-pictures
+In this project we had used open-source database https://www.kaggle.com/harperd17/mushroom-pictures
 
 # Structure of an artificial neural network
 
