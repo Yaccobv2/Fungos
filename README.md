@@ -11,11 +11,12 @@ The project is intended to classify mushrooms using their photos, convolutional 
 * Russula mariae
 
 # Used tools
-* OpenCV - image processing library used for learning and testing
-* TensorFlow, Keras - libraries for the implementation and training of artificial neural networks
-* Sklearn - a library containing functions useful for machine learning
-* NumPy - library for easier implementation of mathematicalcalculations
-* Google Collaboratory - a platform that allows you to perform cloudcomputing using a shared GPU
+* Python
+  * OpenCV - image processing library used for learning and testing
+  * TensorFlow, Keras - libraries for the implementation and training of artificial neural networks
+  * Sklearn - a library containing functions useful for machine learning
+  * NumPy - library for easier implementation of mathematicalcalculations
+ * Google Collaboratory - a platform that allows you to perform cloudcomputing using a shared GPU
 
 # Image database
 In this project we had used open-source database https://www.kaggle.com/harperd17/mushroom-pictures
