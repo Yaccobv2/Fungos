@@ -37,8 +37,6 @@ In this project we had used open-source database https://www.kaggle.com/harperd1
 <img src="https://user-images.githubusercontent.com/39679208/116815391-a98f9680-ab5d-11eb-8b6b-2b4c361412fa.PNG"  width="49%" height="50%"/>
 
 
-# TODO
-Preparation of a native mobile application for Android using trainedmodel and enabling the classification of mushrooms from photostaken with a camera or selected from the phone’s photo gallery. IN PROGRESS....
 
 
 
